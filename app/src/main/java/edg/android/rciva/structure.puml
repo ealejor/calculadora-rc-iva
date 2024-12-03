@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+!theme sketchy-outline
+skinparam backgroundColor #a0dbb0
+skinparam sequenceArrowColor #28a428
+skinparam handwritten true
+skinparam shadowing true
+skinparam handwritten true
+skinparam sequenceArrowThickness 0.8
+skinparam sequenceParticipantUnderlineThickness 1
+
+
+package "edg.android.rciva" {
+    [Card]
+    [Card Item]
+    [Calculator]
+
+    [Calculator]  -down-> [Title]
+    [Calculator]  -down-> [Logo]
+    [Calculator]  -down-> [Content]
+    [Content] -down-> [Income]
+    [Content] -down-> [SMN]
+    [Content] -down-> [AFPS]
+    [Card] -down-> [Card Item]
+    [AFPS] -down..> [Card] #red
+    [Content] -down-> [RCIVA]
+    [Content] -down-> [ANS]
+    [ANS] .down.> [Card] #red
+    [RCIVA] .down.> [Card] #red
+
+    [Subtitle]
+
+    [Income] .down.> [Subtitle] #red
+    [SMN] .down.> [Subtitle] #red
+
+
+}
+
+@enduml
